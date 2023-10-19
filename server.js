@@ -35,6 +35,10 @@ app.use('/api/review-and-rating', authentication, reviewAndRatingRoute)
 
 app.use(errorMiddleware)
 
+app.get('/', (req, res)=>{
+    res.send("Hey Ecommerce Backend is running")
+})
+
 app.listen(PORT, async ()=>{
     console.log("Server Running on "+PORT)
     await dbConnect()
